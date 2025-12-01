@@ -105,8 +105,6 @@ export class ProfileService {
         } catch (error) {
             console.error(error);
         }
-
-
     }
     async getPostById(postId) {
         const options = {
@@ -123,7 +121,7 @@ export class ProfileService {
         }
     }
     async deletePost() {
-
+        
     }
 }
 
