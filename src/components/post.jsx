@@ -4,7 +4,7 @@ import profileService from '../services/profileService';
 import { useSelector } from 'react-redux';
 
 
-function post({ content, images, tags, postId, isLiked, likes }) {
+function Post({ content, images, tags, postId, isLiked, likes }) {
     const authStatus = useSelector((state) => state.auth.status)
     const [liked, setLiked] = useState(isLiked)
     const [currentLikes, setCurrentLikes] = useState(likes);
@@ -63,4 +63,4 @@ function post({ content, images, tags, postId, isLiked, likes }) {
     );
 }
 
-export default post
+export default Post
