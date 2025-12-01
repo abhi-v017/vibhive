@@ -1,0 +1,18 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+li:hover svg{
+  color: black;
+}
+
+.scroll-box {
+  overflow: auto;
+  -ms-overflow-style: none;  /* IE */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.scroll-box::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari */
+}
