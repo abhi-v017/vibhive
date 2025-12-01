@@ -1,13 +1,13 @@
-import Footer from './Footer/Footer'
-import Header from './Header/Header'
-import Container from './container/Container'
-import Login from './Login'
-import Signup from './Signup'
-import Createpost from './Createpost'
-import Post from './Post'
-import Profile from './Profile'
-import Update from './Update'
-import Follow from './Follow'
+import Footer from './Footer/Footer.jsx'
+import Header from './Header/Header.jsx'
+import Container from './container/Container.jsx'
+import Login from './Login.jsx'
+import Signup from './Signup.jsx'
+import Createpost from './Createpost.jsx'
+import Post from './Post.jsx'
+import Profile from './Profile.jsx'
+import Update from './Update.jsx'
+import Follow from './Follow.jsx'
 
 export{
     Footer,
