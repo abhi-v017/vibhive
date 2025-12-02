@@ -6,7 +6,7 @@ export class FollowService {
         const options = {
             method: 'POST',
             url: `${import.meta.env.VITE_API_URL}/api/v1/follows/follow/${userId}`,
-            headers: { accept: 'application/json' }
+            headers: { accept: 'application/json', 'Authorization': `Bearer ${localStorage.getItem('accessToken')}` }
         };
         try {
             const { data } = await axios.request(options);
@@ -22,7 +22,7 @@ export class FollowService {
             method: 'GET',
             url: `${import.meta.env.VITE_API_URL}/api/v1/follows/followers-list/${username}`,
             params: { page: '1', limit: '5' },
-            headers: { accept: 'application/json' }
+            headers: { accept: 'application/json', 'Authorization': `Bearer ${localStorage.getItem('accessToken')}` }
         };
         try {
             const { data } = await axios.request(options);
@@ -37,7 +37,7 @@ export class FollowService {
             method: 'GET',
             url: `${import.meta.env.VITE_API_URL}/api/v1/follows/following-list/${username}`,
             params: { page: '1', limit: '5' },
-            headers: { accept: 'application/json' }
+            headers: { accept: 'application/json', 'Authorization': `Bearer ${localStorage.getItem('accessToken')}` }
         };
         try {
             const { data } = await axios.request(options);

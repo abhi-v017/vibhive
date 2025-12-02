@@ -4,7 +4,7 @@ export class AuthService {
         const options = {
             method: 'POST',
             url: `${import.meta.env.VITE_API_URL}/api/v1/users/login`,
-            headers: { accept: 'application/json', 'content-type': 'application/json' },
+            headers: { accept: 'application/json', 'content-type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('accessToken')}` },
             data: { password, username }
         };
         try {
@@ -18,7 +18,7 @@ export class AuthService {
         const options = {
             method: 'GET',
             url: `${import.meta.env.VITE_API_URL}/api/v1/users/current-user`,
-            headers: { accept: 'application/json' }
+            headers: { accept: 'application/json', 'Authorization': `Bearer ${localStorage.getItem('accessToken')}` }
         };
 
         try {
@@ -36,7 +36,8 @@ export class AuthService {
             url: `${import.meta.env.VITE_API_URL}/api/v1/users/register`,
             headers: { 
                 accept: 'application/json',
-                'content-type': 'multipart/form-data'
+                'content-type': 'multipart/form-data',
+                'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
             },
             data: formData
         };
@@ -52,7 +53,7 @@ export class AuthService {
         const options = {
             method: 'POST',
             url: `${import.meta.env.VITE_API_URL}/api/v1/users/logout`,
-            headers: { accept: 'application/json' },
+            headers: { accept: 'application/json', 'Authorization': `Bearer ${localStorage.getItem('accessToken')}`  },
         };
         try {
             const { data } = await axios.request(options)

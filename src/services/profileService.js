@@ -4,7 +4,8 @@ export class ProfileService {
         const options = {
             method: 'POST',
             url: `${import.meta.env.VITE_API_URL}/api/v1/posts/create-post`,
-            headers: { accept: 'application/json', 'content-type': 'multipart/form-data' },
+            headers: { accept: 'application/json', 'content-type': 'multipart/form-data','Authorization': `Bearer ${localStorage.getItem('accessToken')}`},
+            
             data: data
         }
         try {
@@ -18,7 +19,7 @@ export class ProfileService {
         const options = {
             method: 'GET',
             url: `${import.meta.env.VITE_API_URL}/api/v1/users/`,
-            headers: { accept: 'application/json' }
+            headers: { accept: 'application/json', 'Authorization': `Bearer ${localStorage.getItem('accessToken')}` }
         };
 
         try {
@@ -35,7 +36,8 @@ export class ProfileService {
             url: `${import.meta.env.VITE_API_URL}/api/v1/users/update-details`,
             headers: { 
                 accept: 'application/json',
-                'content-type': 'multipart/form-data'
+                'content-type': 'multipart/form-data',
+                'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
             },
             data: formData
         };
@@ -67,7 +69,7 @@ export class ProfileService {
             method: 'GET',
             url: `${import.meta.env.VITE_API_URL}/api/v1/posts/get/my`,
             params: { page: '1', limit: '10' },
-            headers: { accept: 'application/json' }
+            headers: { accept: 'application/json', 'Authorization': `Bearer ${localStorage.getItem('accessToken')}` }
         };
         try {
             const { data } = await axios.request(options);
@@ -81,7 +83,7 @@ export class ProfileService {
         const options = {
             method: 'GET',
             url: `${import.meta.env.VITE_API_URL}/api/v1/users/c/${username}`,
-            headers: { accept: 'application/json' }
+            headers: { accept: 'application/json', 'Authorization': `Bearer ${localStorage.getItem('accessToken')}` }
         };
         try {
             const { data } = await axios.request(options);
@@ -96,7 +98,7 @@ export class ProfileService {
             method: 'GET',
             url: `${import.meta.env.VITE_API_URL}/api/v1/posts/get/u/${username}`,
             params: { page: '1', limit: '6' },
-            headers: { accept: 'application/json' }
+            headers: { accept: 'application/json', 'Authorization': `Bearer ${localStorage.getItem('accessToken')}` }
         };
         try {
             const { data } = await axios.request(options);
@@ -112,7 +114,7 @@ export class ProfileService {
         const options = {
             method: 'GET',
             url: `${import.meta.env.VITE_API_URL}/api/v1/posts/get/${postId}`,
-            headers: { accept: 'application/json' }
+            headers: { accept: 'application/json', 'Authorization': `Bearer ${localStorage.getItem('accessToken')}` }
         };
         try {
             const { data } = await axios.request(options);
