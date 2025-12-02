@@ -102,7 +102,8 @@ export class ProfileService {
             method: 'GET',
             url: `${import.meta.env.VITE_API_URL}/api/v1/posts/get/u/${username}`,
             params: { page: '1', limit: '6' },
-            headers: { accept: 'application/json', 'Authorization': `Bearer ${localStorage.getItem('accessToken')}` }
+            headers: { accept: 'application/json' },
+            withCredentials: true,
         };
         try {
             const { data } = await axios.request(options);
@@ -118,7 +119,8 @@ export class ProfileService {
         const options = {
             method: 'GET',
             url: `${import.meta.env.VITE_API_URL}/api/v1/posts/get/${postId}`,
-            headers: { accept: 'application/json', 'Authorization': `Bearer ${localStorage.getItem('accessToken')}` }
+            headers: { accept: 'application/json' },
+            withCredentials: true,
         };
         try {
             const { data } = await axios.request(options);
