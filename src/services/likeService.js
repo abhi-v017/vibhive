@@ -5,7 +5,8 @@ export class LikeService {
         const options = {
             method: 'POST',
             url: `${import.meta.env.VITE_API_URL}/api/v1/likes/like/${postId}`,
-            headers: { accept: 'application/json', 'Authorization': `Bearer ${localStorage.getItem('accessToken')}` }
+            headers: { accept: 'application/json' },
+            withCredentials: true,
         };
         try {
             const { data } = await axios.request(options);

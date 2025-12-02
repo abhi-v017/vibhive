@@ -4,7 +4,8 @@ export class AuthService {
         const options = {
             method: 'POST',
             url: `${import.meta.env.VITE_API_URL}/api/v1/users/login`,
-            headers: { accept: 'application/json', 'content-type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('accessToken')}` },
+            headers: { accept: 'application/json', 'content-type': 'application/json' },
+            withCredentials: true,
             data: { password, username }
         };
         try {
@@ -18,7 +19,8 @@ export class AuthService {
         const options = {
             method: 'GET',
             url: `${import.meta.env.VITE_API_URL}/api/v1/users/current-user`,
-            headers: { accept: 'application/json', 'Authorization': `Bearer ${localStorage.getItem('accessToken')}` }
+            headers: { accept: 'application/json' },
+            withCredentials: true,
         };
 
         try {
@@ -37,8 +39,8 @@ export class AuthService {
             headers: { 
                 accept: 'application/json',
                 'content-type': 'multipart/form-data',
-                'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
             },
+            withCredentials: true,
             data: formData
         };
         try {
@@ -53,7 +55,8 @@ export class AuthService {
         const options = {
             method: 'POST',
             url: `${import.meta.env.VITE_API_URL}/api/v1/users/logout`,
-            headers: { accept: 'application/json', 'Authorization': `Bearer ${localStorage.getItem('accessToken')}`  },
+            headers: { accept: 'application/json' },
+            withCredentials: true,
         };
         try {
             const { data } = await axios.request(options)

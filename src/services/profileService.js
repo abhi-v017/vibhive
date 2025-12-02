@@ -55,7 +55,8 @@ export class ProfileService {
             method: 'GET',
             url: `${import.meta.env.VITE_API_URL}/api/v1/posts/all-posts`,
             params: { page: '1', limit: '10' },
-            headers: { accept: 'application/json' }
+            headers: { accept: 'application/json' },
+            withCredentials: true,
         };
         try {
             const { data } = await axios.request(options);
@@ -69,7 +70,8 @@ export class ProfileService {
             method: 'GET',
             url: `${import.meta.env.VITE_API_URL}/api/v1/posts/get/my`,
             params: { page: '1', limit: '10' },
-            headers: { accept: 'application/json', 'Authorization': `Bearer ${localStorage.getItem('accessToken')}` }
+            headers: { accept: 'application/json' },
+            withCredentials: true,
         };
         try {
             const { data } = await axios.request(options);
@@ -83,7 +85,8 @@ export class ProfileService {
         const options = {
             method: 'GET',
             url: `${import.meta.env.VITE_API_URL}/api/v1/users/c/${username}`,
-            headers: { accept: 'application/json', 'Authorization': `Bearer ${localStorage.getItem('accessToken')}` }
+            headers: { accept: 'application/json' },
+            withCredentials: true,
         };
         try {
             const { data } = await axios.request(options);
