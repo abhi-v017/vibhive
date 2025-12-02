@@ -5,7 +5,7 @@ export class FollowService {
     async followUserService(userId) {
         const options = {
             method: 'POST',
-            url: `${import.meta.env.API_URL}/api/v1/follows/follow/${userId}`,
+            url: `${import.meta.env.VITE_API_URL}/api/v1/follows/follow/${userId}`,
             headers: { accept: 'application/json' }
         };
         try {
@@ -20,7 +20,7 @@ export class FollowService {
     async followerListService(username) {
         const options = {
             method: 'GET',
-            url: `${import.meta.env.API_URL}/api/v1/follows/followers-list/${username}`,
+            url: `${import.meta.env.VITE_API_URL}/api/v1/follows/followers-list/${username}`,
             params: { page: '1', limit: '5' },
             headers: { accept: 'application/json' }
         };
@@ -35,7 +35,7 @@ export class FollowService {
     async followingListService(username) {
         const options = {
             method: 'GET',
-            url: `${import.meta.env.API_URL}/api/v1/follows/following-list/${username}`,
+            url: `${import.meta.env.VITE_API_URL}/api/v1/follows/following-list/${username}`,
             params: { page: '1', limit: '5' },
             headers: { accept: 'application/json' }
         };

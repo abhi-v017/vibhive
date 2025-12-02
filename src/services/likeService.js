@@ -4,7 +4,7 @@ export class LikeService {
     async likePostService(postId) {
         const options = {
             method: 'POST',
-            url: `${import.meta.env.API_URL}/api/v1/likes/like/${postId}`,
+            url: `${import.meta.env.VITE_API_URL}/api/v1/likes/like/${postId}`,
             headers: { accept: 'application/json' }
         };
         try {

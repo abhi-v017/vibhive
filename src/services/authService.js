@@ -3,7 +3,7 @@ export class AuthService {
     async loginService(username, password) {
         const options = {
             method: 'POST',
-            url: `${import.meta.env.API_URL}/api/v1/users/login`,
+            url: `${import.meta.env.VITE_API_URL}/api/v1/users/login`,
             headers: { accept: 'application/json', 'content-type': 'application/json' },
             data: { password, username }
         };
@@ -17,7 +17,7 @@ export class AuthService {
     async getUserService() {
         const options = {
             method: 'GET',
-            url: `${import.meta.env.API_URL}/api/v1/users/current-user`,
+            url: `${import.meta.env.VITE_API_URL}/api/v1/users/current-user`,
             headers: { accept: 'application/json' }
         };
 
@@ -33,7 +33,7 @@ export class AuthService {
     async signUpService(formData) {
         const options = {
             method: 'POST',
-            url: `${import.meta.env.API_URL}/api/v1/users/register`,
+            url: `${import.meta.env.VITE_API_URL}/api/v1/users/register`,
             headers: { 
                 accept: 'application/json',
                 'content-type': 'multipart/form-data'
@@ -51,7 +51,7 @@ export class AuthService {
     async logoutService() {
         const options = {
             method: 'POST',
-            url: `${import.meta.env.API_URL}/api/v1/users/logout`,
+            url: `${import.meta.env.VITE_API_URL}/api/v1/users/logout`,
             headers: { accept: 'application/json' },
         };
         try {
