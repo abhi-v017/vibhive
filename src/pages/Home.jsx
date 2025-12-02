@@ -16,7 +16,7 @@ function Home() {
     }, [])
     console.log(posts)
     return (
-        <div className='min-h-full bg-zinc-950 scroll-box relative pt-2'>
+        <div className='min-h-[87.8vh] bg-zinc-950 scroll-box relative pt-2'>
             <Container>
                 <div className='flex flex-wrap flex-col items-center py-2 scroll-box'>
                     {

@@ -55,7 +55,7 @@ function Profile() {
                 return;
             }
             const response = await followService.followUserService(userId)
-            
+
             // Refresh profile data after follow/unfollow
             if (response && response.data) {
                 const updatedProfile = await profileService.getProfileByUsername(username);
