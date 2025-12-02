@@ -34,17 +34,17 @@ function Post({ content, images, tags, postId, isLiked, likes }) {
     return (
         <div className='bg-zinc-950 text-white p-2 flex justify-center items-start flex-col'>
             {images && images.length > 0 && (
-                <img className=' h-96 border-2 border-zinc-800 rounded-lg object-cover mx-auto hover:shadow-sm hover:shadow-[#a35eaca8] max-lg:h-80' src={images[0].url} alt="Post" /> // Ensure you access the correct image URL
+                <img className=' h-96 border-2 border-zinc-800 rounded-lg object-cover mx-auto hover:shadow-sm hover:shadow-[#a35eaca8] max-lg:h-80 max-md:h-60 max-sm:h-40' src={images[0].url} alt="Post" /> // Ensure you access the correct image URL
             )}
-            <p className='py-1 my-1'>{content}</p>
+            <p className='py-1 my-1 max-md:text-sm max-sm:text-xs'>{content}</p>
             {tags && tags.length > 0 && (
-                <div className="py-1 my-1 text-zinc-500">
+                <div className="py-1 my-1 text-zinc-500 max-md:text-sm max-sm:text-xs">
                     {tags.map((tag, index) => (
                         <span key={index} className="tag">{tag}</span>
                     ))}
                 </div>
             )}
-            <button className='cursor-pointer' onClick={likePost}>
+            <button className='cursor-pointer max-md:text-sm max-sm:text-xs' onClick={likePost}>
                 <svg 
                     xmlns="http://www.w3.org/2000/svg" 
                     viewBox="0 0 24 24" 
@@ -58,7 +58,7 @@ function Post({ content, images, tags, postId, isLiked, likes }) {
                     strokeLinecap="round" />
                 </svg>
             </button>
-            <span className='px-2'>{likes}</span>
+            <span className='px-2 max-md:text-sm max-sm:text-xs'>{likes}</span>
         </div>
     );
 }

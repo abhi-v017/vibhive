@@ -21,7 +21,7 @@ function Home() {
                 <div className='flex flex-wrap flex-col items-center py-2 scroll-box'>
                     {
                         posts.map((post) => (
-                            <div className='p-2 w-1/4 flex-[0 0 auto] max-md:w-[60%]' key={post._id}>
+                            <div className='p-2 w-1/3 flex-[0 0 auto] max-md:w-[60%]' key={post._id}>
                                 <Post content={post.content}
                                     images={post.images}
                                     tags={post.tags}

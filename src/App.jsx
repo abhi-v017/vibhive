@@ -8,11 +8,13 @@ function App() {
 
   return (
     <>
+    <div className='min-h-full flex flex-col h-screen '> 
       <Header />
-      <main>
+      <main className='flex-1 h-full overflow-y-auto scroll-box bg-zinc-950'>
         <Outlet />
       </main>
       <Footer />
+    </div>
     </>
   )
 }

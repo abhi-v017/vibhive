@@ -51,12 +51,12 @@ function Createpost() {
     }
 
     return (
-            <div className='bg-zinc-950 h-[87.8vh] flex items-center justify-center text-white'>
+            <div className='bg-zinc-950 h-full flex items-center justify-center text-white'>
             <div className='w-1/2 max-md:w-[80%] border-2 border-zinc-900 rounded-xl bg-zinc-950 p-4 shadow-md shadow-white/15'>
                 <h1 className='text-center font-bold text-2xl p-2 max-md:text-xl'>Create post!........ </h1>
                 <form onSubmit={handleSubmit} className=' flex flex-col justify-center items-start'>
                     <div className='flex justify-center items-start flex-col gap-4 text-lg m-2 max-md:text-base max-md:w-full'>
-                        <label htmlFor="images">Upload Image/Video:</label>
+                        <label htmlFor="images">Upload Image:</label>
                         <input
                             className='rounded-xl m-1 border-2 border-zinc-900 w-[70%] bg-transparent'
                             type="file"
