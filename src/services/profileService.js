@@ -3,7 +3,7 @@ export class ProfileService {
     async CreatePostService(data) {
         const options = {
             method: 'POST',
-            url: '/api/v1/posts/create-post',
+            url: `${import.meta.env.API_URL}/api/v1/posts/create-post`,
             headers: { accept: 'application/json', 'content-type': 'multipart/form-data' },
             data: data
         }
@@ -17,7 +17,7 @@ export class ProfileService {
     async getProfileService() {
         const options = {
             method: 'GET',
-            url: '/api/v1/users/',
+            url: `${import.meta.env.API_URL}/api/v1/users/`,
             headers: { accept: 'application/json' }
         };
 
@@ -32,7 +32,7 @@ export class ProfileService {
     async updateService(formData) {
         const options = {
             method: 'PATCH',
-            url: '/api/v1/users/update-details',
+            url: `${import.meta.env.API_URL}/api/v1/users/update-details`,
             headers: { 
                 accept: 'application/json',
                 'content-type': 'multipart/form-data'
@@ -51,7 +51,7 @@ export class ProfileService {
     async getAllPosts() {
         const options = {
             method: 'GET',
-            url: '/api/v1/posts/all-posts',
+            url: `${import.meta.env.API_URL}/api/v1/posts/all-posts`,
             params: { page: '1', limit: '10' },
             headers: { accept: 'application/json' }
         };
@@ -65,7 +65,7 @@ export class ProfileService {
     async getmyPosts() {
         const options = {
             method: 'GET',
-            url: '/api/v1/posts/get/my',
+            url: `${import.meta.env.API_URL}/api/v1/posts/get/my`,
             params: { page: '1', limit: '10' },
             headers: { accept: 'application/json' }
         };
@@ -80,7 +80,7 @@ export class ProfileService {
     async getProfileByUsername(username) {
         const options = {
             method: 'GET',
-            url: `/api/v1/users/c/${username}`,
+            url: `${import.meta.env.API_URL}/api/v1/users/c/${username}`,
             headers: { accept: 'application/json' }
         };
         try {
@@ -94,7 +94,7 @@ export class ProfileService {
     async getPostByUsername(username) {
         const options = {
             method: 'GET',
-            url: `/api/v1/posts/get/u/${username}`,
+            url: `${import.meta.env.API_URL}/api/v1/posts/get/u/${username}`,
             params: { page: '1', limit: '6' },
             headers: { accept: 'application/json' }
         };
@@ -111,7 +111,7 @@ export class ProfileService {
     async getPostById(postId) {
         const options = {
             method: 'GET',
-            url: `/api/v1/posts/get/${postId}`,
+            url: `${import.meta.env.API_URL}/api/v1/posts/get/${postId}`,
             headers: { accept: 'application/json' }
         };
         try {
