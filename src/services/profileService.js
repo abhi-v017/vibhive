@@ -4,8 +4,8 @@ export class ProfileService {
         const options = {
             method: 'POST',
             url: `${import.meta.env.VITE_API_URL}/api/v1/posts/create-post`,
-            headers: { accept: 'application/json', 'content-type': 'multipart/form-data','Authorization': `Bearer ${localStorage.getItem('accessToken')}`},
-            
+            headers: { accept: 'application/json', 'content-type': 'multipart/form-data'},
+            withCredentials: true,
             data: data
         }
         try {
@@ -19,7 +19,8 @@ export class ProfileService {
         const options = {
             method: 'GET',
             url: `${import.meta.env.VITE_API_URL}/api/v1/users/`,
-            headers: { accept: 'application/json', 'Authorization': `Bearer ${localStorage.getItem('accessToken')}` }
+            headers: { accept: 'application/json' },
+            withCredentials: true,
         };
 
         try {
@@ -37,8 +38,8 @@ export class ProfileService {
             headers: { 
                 accept: 'application/json',
                 'content-type': 'multipart/form-data',
-                'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
             },
+            withCredentials: true,
             data: formData
         };
 
